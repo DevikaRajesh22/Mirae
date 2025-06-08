@@ -91,7 +91,8 @@ export const Nav = styled.nav<{ $isOpen?: boolean }>`
     transform: ${({ $isOpen }) => $isOpen ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform 0.3s ease-in-out;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
-    padding-top: 70px; /* Space for header */
+    padding-top: 70px; 
+    z-index: 1003;
   }
 
   a {
@@ -110,8 +111,8 @@ export const HamburgerButton = styled.button<{ $isOpen: boolean }>`
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 1.75rem; /* Smaller button */
-  height: 1.5rem; /* Smaller button */
+  width: 1.75rem;
+  height: 1.5rem;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -121,6 +122,7 @@ export const HamburgerButton = styled.button<{ $isOpen: boolean }>`
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+   z-index: 1004;
 
   &:focus {
     outline: none;
@@ -165,11 +167,13 @@ export const MobileNavWrapper = styled.div<{ $isOpen: boolean }>`
     width: 100%;
     height: 100vh;
     pointer-events: ${({ $isOpen }) => $isOpen ? 'auto' : 'none'};
+    z-index: 1003;
   }
 `;
 
 export const Overlay = styled.div<{ $isOpen: boolean }>`
   display: none;
+  z-index: 1002;
   
   @media (max-width: ${mobile}) {
     display: ${({ $isOpen }) => $isOpen ? 'block' : 'none'};
