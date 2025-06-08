@@ -15,7 +15,7 @@ export const Header = styled.header`
   position: relative;
 
   @media (max-width: ${mobile}) {
-    height: 80px;
+    height: 70px; /* Reduced header height */
     padding: 0 1rem;
   }
 `;
@@ -41,8 +41,8 @@ export const LogoCircle = styled.div`
   border-radius: 50%;
 
   @media (max-width: ${mobile}) {
-    width: 30px;
-    height: 30px;
+    width: 28px; /* Slightly smaller logo */
+    height: 28px;
   }
 `;
 
@@ -53,7 +53,7 @@ export const BrandText = styled.h1`
   line-height: 150%;
 
   @media (max-width: ${mobile}) {
-    font-size: 1.5rem;
+    font-size: 1.25rem; /* Smaller brand text */
   }
 `;
 
@@ -77,19 +77,21 @@ export const Nav = styled.nav<{ $isOpen?: boolean }>`
 
   @media (max-width: ${mobile}) {
     flex-direction: column;
-    gap: 1.5rem;
-    padding: 2rem;
+    gap: 1.25rem; /* Reduced gap */
+    padding: 1.5rem; /* Reduced padding */
+    font-size: 16px; /* Smaller font size */
     background-color: #d8a498;
     position: fixed;
     top: 0;
     right: 0;
     height: 100vh;
     width: 70%;
-    max-width: 300px;
+    max-width: 280px; /* Slightly narrower */
     z-index: 1000;
     transform: ${({ $isOpen }) => $isOpen ? 'translateX(0)' : 'translateX(100%)'};
     transition: transform 0.3s ease-in-out;
     box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+    padding-top: 70px; /* Space for header */
   }
 
   a {
@@ -108,8 +110,8 @@ export const HamburgerButton = styled.button<{ $isOpen: boolean }>`
   display: none;
   flex-direction: column;
   justify-content: space-around;
-  width: 2rem;
-  height: 2rem;
+  width: 1.75rem; /* Smaller button */
+  height: 1.5rem; /* Smaller button */
   background: transparent;
   border: none;
   cursor: pointer;
@@ -125,8 +127,8 @@ export const HamburgerButton = styled.button<{ $isOpen: boolean }>`
   }
 
   span {
-    width: 2rem;
-    height: 0.25rem;
+    width: 100%;
+    height: 2px; /* Thinner lines */
     background: #FFF9F8;
     border-radius: 10px;
     transition: all 0.3s linear;
@@ -139,7 +141,7 @@ export const HamburgerButton = styled.button<{ $isOpen: boolean }>`
 
     &:nth-child(2) {
       opacity: ${({ $isOpen }) => $isOpen ? '0' : '1'};
-      transform: ${({ $isOpen }) => $isOpen ? 'translateX(20px)' : 'translateX(0)'};
+      transform: ${({ $isOpen }) => $isOpen ? 'translateX(10px)' : 'translateX(0)'};
     }
 
     &:nth-child(3) {
